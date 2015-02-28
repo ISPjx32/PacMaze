@@ -3,7 +3,7 @@ var Pacman = cc.Sprite.extend({
 		this._super();
 		this.initWithFile('res/images/pacman.png');
 
-		this.direction = Pacman.DIR.LEFT;
+		this.direction = Pacman.DIR.STILL;
 
 		this.x = x;
 		this.y = y;
@@ -28,6 +28,9 @@ var Pacman = cc.Sprite.extend({
 				break;
 		}
 		this.updatePosition();
+	},
+	setDirection: function(dir){
+		this.direction = dir;
 	}
 });
 

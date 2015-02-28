@@ -29,5 +29,10 @@ var Maze = cc.Node.extend({
 			}
 		}
 		this.setAnchorPoint( cc.p( 0, 0 ) );
+	},
+	isWall: function(blockX,blockY){
+		var r = this.HEIGHT - blockY - 1;
+		var c = blockX;
+		return this.MAP[r][c] == '#';
 	}
 });

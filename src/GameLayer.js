@@ -8,6 +8,7 @@ var GameLayer = cc.LayerColor.extend({
 
         this.pacman = new Pacman( 10*40 + (-20), 6*40 + (-20) );
         this.maze.addChild( this.pacman );
+        this.pacman.setMaze(this.maze);
         this.pacman.scheduleUpdate();
 
         this.addKeyboardHandlers();
@@ -24,7 +25,7 @@ var GameLayer = cc.LayerColor.extend({
 				self.onKeyDown(e);
 			},
 			onKeyReleased: function(e){
-				//self.onKeyUp(e);
+				self.onKeyUp(e);
 			}
 		},this);
 	},
@@ -43,6 +44,9 @@ var GameLayer = cc.LayerColor.extend({
 				this.pacman.setDirection(Pacman.DIR.DOWN);
 				break;
 		}
+	},
+	onKeyUp: function(keyCode){
+		//this.pacman.setDirection(Pacman.DIR.STILL);
 	}
 	
 });

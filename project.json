@@ -13,6 +13,7 @@
     "jsList" : [
         "src/resource.js",
         "src/GameLayer.js",
-        "src/Maze.js"
+        "src/Maze.js",
+        "src/Pacman.js"
     ]
 }

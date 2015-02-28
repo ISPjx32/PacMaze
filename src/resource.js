@@ -1,7 +1,7 @@
 var res = {
-    HelloWorld_png : "res/HelloWorld.png",
-    CloseNormal_png : "res/CloseNormal.png",
-    CloseSelected_png : "res/CloseSelected.png"
+    wall_png = 'res/images/wall.png',
+    pacman_png = 'res/images/pacman.png',
+    dot_png = 'res/images/dot.png'
 };
 
 var g_resources = [];

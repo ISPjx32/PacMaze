@@ -3,6 +3,7 @@ var Pacman = cc.Sprite.extend({
 		this._super();
 		this.initWithFile('res/images/pacman.png');
 
+		this.nextDirection = Pacman.DIR.STILL;
 		this.direction = Pacman.DIR.STILL;
 
 		this.x = x;
@@ -13,6 +14,9 @@ var Pacman = cc.Sprite.extend({
 		this.setPosition(cc.p(this.x,this.y));
 	},
 	update: function(dt){
+		if (this.isAtCenter()){
+			this.direction = this.nextDirection;
+		}
 		switch (this.direction){
 			case Pacman.DIR.UP:
 				this.y += Pacman.MOVE_STEP;
@@ -30,7 +34,10 @@ var Pacman = cc.Sprite.extend({
 		this.updatePosition();
 	},
 	setDirection: function(dir){
-		this.direction = dir;
+		this.nextDirection = dir;
+	},
+	isAtCenter: function(){
+		return (this.x  % 40 == 20) && (this.y % 40 == 20);
 	}
 });
 

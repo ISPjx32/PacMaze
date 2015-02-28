@@ -6,7 +6,7 @@ var GameLayer = cc.LayerColor.extend({
 		this.maze.setPosition( cc.p( 0, 40 ) );
         this.addChild( this.maze );
 
-        this.pacman = new Pacman( 10*40 + 20, 6*40 + 20 );
+        this.pacman = new Pacman( 10*40 + (-20), 6*40 + (-20) );
         this.maze.addChild( this.pacman );
         this.pacman.scheduleUpdate();
 

@@ -8,7 +8,8 @@ var GameLayer = cc.LayerColor.extend({
 
         this.pacman = new Pacman( 10*40 + 20, 6*40 + 20 );
         this.maze.addChild( this.pacman );
-
+        this.pacman.scheduleUpdate();
+        
 		//this.scheduleUpdate();
 
 		return true;
